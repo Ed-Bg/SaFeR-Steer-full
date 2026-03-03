@@ -36,11 +36,11 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.model.use_remove_padding=True \
     actor_rollout_ref.model.enable_gradient_checkpointing=True \
     actor_rollout_ref.model.enable_activation_offload=True \
-    actor_rollout_ref.actor.optim.lr=1e-6 \
+    actor_rollout_ref.actor.optim.lr=1e-5 \
     actor_rollout_ref.actor.ppo_mini_batch_size=$TRAIN_BATCH_SIZE \
     actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=$MICRO_BATCH_SIZE \
     actor_rollout_ref.actor.use_kl_loss=True \
-    actor_rollout_ref.actor.kl_loss_coef=0.1 \
+    actor_rollout_ref.actor.kl_loss_coef=0.001 \
     actor_rollout_ref.actor.kl_loss_type=low_var_kl \
     actor_rollout_ref.actor.entropy_coeff=0 \
     actor_rollout_ref.actor.fsdp_config.param_offload=$OFFLOAD \
@@ -63,8 +63,8 @@ python3 -m verl.trainer.main_ppo \
     trainer.save_freq=10 \
     trainer.test_freq=5 \
     trainer.total_epochs=1 \
-    data.train_files=$PROJECT_DIR/data/steer_rl/train.parquet \
-    data.val_files=$PROJECT_DIR/data/steer_rl/test.parquet \
+    data.train_files=$PROJECT_DIR/data/safedy_multiturn/train.parquet \
+    data.val_files=$PROJECT_DIR/data/safedy_multiturn/test.parquet \
     actor_rollout_ref.rollout.multi_turn.interaction_config_path="$PROJECT_DIR/examples/sglang_multiturn/config/interaction_config/saferdy_interaction_config.yaml" \
     actor_rollout_ref.rollout.agent.default_agent_loop=tool_agent \
     "$@"

@@ -16,7 +16,7 @@ echo "============================================"
 MODEL_PATH="${MODEL_PATH:-/path/to/model}"
 OUTPUT_DIR="${OUTPUT_DIR:-$PROJECT_DIR/outputs/single_turn}"
 DATA_DIR="${DATA_DIR:-$PROJECT_DIR/data}"
-BENCHMARKS="${BENCHMARKS:-mmsafety,vlguard,vlsbench}"
+BENCHMARKS="${BENCHMARKS:-beavertails_v,mmsafety,spa_vl,vlguard,vlsbench}"
 
 # Judge API
 export JUDGE_API_KEY="${JUDGE_API_KEY:?Error: JUDGE_API_KEY not set}"

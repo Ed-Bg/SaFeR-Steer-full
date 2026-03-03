@@ -130,7 +130,7 @@ def _extract_interaction_reward(
     Args:
         extra_info: dict containing turn scores from interaction
         aggregation_method: how to aggregate turn scores. Options:
-            - "min_mean": 0.4*min + 0.6*mean (recommended, prevents any-turn neglect)
+            - "min_mean": 0.3*min + 0.7*mean (recommended, prevents any-turn neglect)
             - "mean": simple average (baseline, matches typical eval)
             - "soft_linear": gentle recency bias without extreme last-turn focus
             - "harmonic": heavily penalizes low outliers
@@ -162,13 +162,13 @@ def _extract_interaction_reward(
 
 
 def compute_score(solution_str, ground_truth, extra_info=None, **kwargs):
-    """Return interaction reward for SafeDy.
+    """Return interaction reward for STEER/SaFeR-Steer.
 
     The interaction reward is expected to be stored in extra_info (e.g., tool_extra_fields.turn_scores).
     If missing, returns 0.0.
     
     Kwargs:
-        aggregation_method: str, how to aggregate turn scores. Default "ZZ".
+        aggregation_method: str, how to aggregate turn scores. Default "min_mean".
             Options: "min_mean", "mean", "soft_linear", "harmonic"
             Avoid "linear" as it causes last-turn overfitting.
     """
