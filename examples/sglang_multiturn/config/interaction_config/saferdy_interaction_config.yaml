@@ -1,0 +1,17 @@
+interaction:
+  - name: "saferdy"
+    class_name: "verl.interactions.saferdy_interaction.SaferdyInteraction"
+    config:
+      use_judge_question: true
+      include_feedback_prefix: true
+      max_judge_images: 1
+      reward_model_base_url: "http://127.0.0.1:9010"
+      reward_model_name: "qwen3-vl-32b"
+      reward_model_timeout_s: 240
+      reward_model_max_tokens: 12288
+      reward_model_temperature: 0.0
+      reward_model_top_p: 1.0
+      reward_model_endpoint: null
+      log_reward_debug: true
+      reward_score_normalize: true
+      max_turns: 10

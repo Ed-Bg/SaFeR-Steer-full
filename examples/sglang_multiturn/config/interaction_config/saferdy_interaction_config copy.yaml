@@ -1,0 +1,4 @@
+interaction:
+  - name: "saferdy"
+    class_name: "verl.interactions.saferdy_interaction.SaferdyInteraction"
+    config: {}
