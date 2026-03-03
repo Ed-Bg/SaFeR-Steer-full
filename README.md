@@ -4,7 +4,7 @@
 
 > 🎉 **ICML 2026**
 >
-> 📄 [Paper (arXiv)](https://arxiv.org/abs/XXXX.XXXXX) | 🤗 [Datasets (Coming Soon)](#datasets)
+> 📄 [Paper (arXiv)](https://arxiv.org/abs/XXXX.XXXXX)
 > 
 > This is the complete codebase for reproducibility. For the anonymous review version, see the `SaFeR-Steer/` directory.
 
@@ -63,7 +63,7 @@ SaFeR-Steer-Full/
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SaFeR-Steer.git
+git clone https://github.com/Ed-Bg/SaFeR-Steer-full.git
 cd SaFeR-Steer-Full
 
 # Install dependencies
@@ -74,19 +74,6 @@ pip install -e .
 ```
 
 ## Quick Start
-
-### Stage I: Data Construction
-
-```bash
-# Generate multi-turn training data
-cd data_construction
-
-# Configure API endpoint in pipeline.py
-# API_KEY = "your-key"
-# BASE_URL = "http://localhost:8000/v1"
-
-python pipeline.py
-```
 
 ### Stage II: SFT Training
 
@@ -120,31 +107,6 @@ python -m evaluation.run_all \
     --benchmarks steer_bench,steer_beaver,steer_mmsafe \
     --output_dir outputs/
 ```
-
-## Hyperparameters
-
-### SFT (Stage II) - Table 5
-
-| Parameter | Value |
-|-----------|-------|
-| Learning rate | 1e-5 |
-| Batch size | 8 |
-| Epochs | 2 |
-| Warmup ratio | 0.1 |
-| Dataset size | 12,934 |
-
-### GRPO (Stage III) - Table 5
-
-| Parameter | Value |
-|-----------|-------|
-| Learning rate | 1e-6 |
-| Batch size | 64 |
-| Mini-batch size | 2 |
-| Rollouts per prompt (K) | 5 |
-| KL penalty (β) | 0.1 |
-| TCSR α | 0.3 |
-| Dataset size | 2,000 |
-
 ## Datasets
 
 We release **STEER**, a multi-turn multimodal safety dataset spanning 2–10 turns:
@@ -166,21 +128,6 @@ We release **STEER**, a multi-turn multimodal safety dataset spanning 2–10 tur
 | STEER-DyS | Original dynamic scenarios |
 
 Download links: [Coming Soon]
-
-## Citation
-
-```bibtex
-@inproceedings{safersteer2026,
-  title={SaFeR-Steer: Evolving Multi-Turn MLLMs via Synthetic Bootstrapping and Feedback Dynamics},
-  author={...},
-  booktitle={International Conference on Machine Learning (ICML)},
-  year={2026}
-}
-```
-
-## License
-
-Apache License 2.0
 
 ## Acknowledgments
 
