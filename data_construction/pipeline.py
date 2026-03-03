@@ -26,7 +26,7 @@ OUTPUT_ROOT = "outputs/data_construction"     # 输出目录
 OUTPUT_FILE = "attack_results.json"        # 输出文件路径
 
 NOISE_LEVEL = 0.03                         # 视觉噪声强度
-MAX_SAMPLES = 2400                            # 处理的最大样本数 (None=全部)
+MAX_SAMPLES = 2400                            # 单次运行截断 (None=全部). 最终数据集: STEER-SFT=12,934 / STEER-RL=2,000
 
 # [修改] 视觉注入配置
 VISUAL_INJECTION_RATIO = 0.10              # 视觉注入比例 (前10%的样本)

@@ -34,7 +34,7 @@ def is_rank0() -> bool:
     return os.environ.get("RANK", "0") == "0" and os.environ.get("LOCAL_RANK", "0") == "0"
 
 class SaferdyInteraction(BaseInteraction):
-    """Interaction for SafeDy multi-turn data.
+    """Interaction for STEER/SaFeR-Steer multi-turn data.
 
     Uses judge tool feedback to replace the next user question (optimized second question).
     Falls back to the original next user message when the judge output cannot be parsed.

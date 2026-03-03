@@ -3,14 +3,12 @@ Single-turn Safety Evaluation
 
 Modular evaluation pipeline for single-turn safety benchmarks.
 
-Supported benchmarks:
+Supported benchmarks (paper Table 3):
+- BeaverTails-V
 - MM-SafetyBench
+- SPA-VL
 - VLGuard  
 - VLSBench
-- SPA-VL
-- SIUO
-- BeaverTails-V
-- MSSBench
 """
 
 from .base import SingleTurnEvaluator

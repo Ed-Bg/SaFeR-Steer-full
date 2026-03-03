@@ -40,5 +40,5 @@ inference:
 
 # Judge Model
 judge:
-  model: "gpt-4o"  # or "gpt-5-nano" as in paper
+  model: "gpt-5-nano"  # Paper evaluation judge model
   api_base: "https://api.openai.com/v1"

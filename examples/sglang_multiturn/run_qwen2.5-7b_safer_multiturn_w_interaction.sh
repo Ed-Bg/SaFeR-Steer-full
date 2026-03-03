@@ -15,11 +15,11 @@ OFFLOAD=${OFFLOAD:-False}
 export CUDA_VISIBLE_DEVICES=4,5,6,7
 
 # ======== wandb 设置 ========
-export WANDB_API_KEY="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"  # 或 wandb login
-export WANDB_ENTITY="${WANDB_ENTITY:-harlan_h-huazhong-university-of-science-and-technology}"                    # 你的团队/用户名
+export WANDB_API_KEY="${WANDB_API_KEY:?Error: Set WANDB_API_KEY via 'export WANDB_API_KEY=your_key' or 'wandb login'}"
+export WANDB_ENTITY="${WANDB_ENTITY:-your-entity}"                    # 你的团队/用户名
 export WANDB_MODE="${WANDB_MODE:-online}"                  # online/offline/disabled
-export WANDB_NOTES="SafeDy multi-turn RL training 3b a0"
-export WANDB_TAGS="safedy,multi-turn,grpo"
+export WANDB_NOTES="SaFeR-Steer multi-turn RL training 7b"
+export WANDB_TAGS="safer-steer,multi-turn,grpo"
 # ===========================
 
 python3 -m verl.trainer.main_ppo \
@@ -32,7 +32,7 @@ python3 -m verl.trainer.main_ppo \
     data.filter_overlong_prompts=True \
     data.truncation='left' \
     data.return_raw_chat=True \
-    actor_rollout_ref.model.path=huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3 \
+    actor_rollout_ref.model.path=${MODEL_PATH:-models/safer-steer-7b-sft} \
     actor_rollout_ref.model.use_remove_padding=True \
     actor_rollout_ref.model.enable_gradient_checkpointing=True \
     actor_rollout_ref.model.enable_activation_offload=True \
@@ -56,8 +56,8 @@ python3 -m verl.trainer.main_ppo \
     algorithm.use_kl_in_reward=False \
     trainer.critic_warmup=0.1 \
     trainer.logger='["console","wandb"]' \
-    trainer.project_name='saferdy_async_rl' \
-    trainer.experiment_name='qwen2.5-3b_saferdy-sgl-multi-w-interaction-n4a0-newprompt' \
+    trainer.project_name='safer_steer_grpo' \
+    trainer.experiment_name='qwen2.5-7b_safer-steer-grpo' \
     trainer.n_gpus_per_node=4 \
     trainer.nnodes=1 \
     trainer.save_freq=10 \
