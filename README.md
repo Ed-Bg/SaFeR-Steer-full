@@ -2,9 +2,8 @@
 
 **Evolving Multi-Turn MLLMs via Synthetic Bootstrapping and Feedback Dynamics**
 
-> 🎉 **ICML 2026**
 >
-> 📄 [Paper (arXiv)](https://arxiv.org/abs/XXXX.XXXXX)
+> 📄 [Paper (arXiv)](https://arxiv.org/abs/2604.16358)
 > 
 > This is the complete codebase for reproducibility. For the anonymous review version, see the `SaFeR-Steer/` directory.
 
