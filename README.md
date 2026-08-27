@@ -108,13 +108,13 @@ python -m evaluation.run_all \
 ```
 ## Datasets
 
-We release **STEER**, a multi-turn multimodal safety dataset spanning 2–10 turns:
+We release **STEER**, a multi-turn multimodal safety dataset spanning 1–10 turns:
 
 | Dataset | Size | Avg Turns | Usage |
 |---------|------|-----------|-------|
-| **STEER-SFT** | 12,934 | 6.35 | SFT training |
-| **STEER-RL** | 2,000 | 8.33 | GRPO training |
-| **STEER-BENCH** | 3,227 | 8.55 | Held-out evaluation |
+| **STEER-SFT** | 12,934 | 6.23 | SFT training |
+| **STEER-RL** | 2,000 | 7.28 | GRPO training |
+| **STEER-BENCH** | 3,227 | 6.34 | Held-out evaluation |
 
 **STEER-BENCH** consists of 5 subsets:
 
