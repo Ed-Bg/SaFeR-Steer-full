@@ -3,9 +3,9 @@
 **Evolving Multi-Turn MLLMs via Synthetic Bootstrapping and Feedback Dynamics**
 
 >
-> 📄 [Paper (arXiv)](https://arxiv.org/abs/2604.16358)
+> 📄 **Accepted at EMNLP 2026 Main Conference**
 > 
-> This is the complete codebase for reproducibility. For the anonymous review version, see the `SaFeR-Steer/` directory.
+> This repository contains the complete codebase for reproducibility.
 
 ## Overview
 
